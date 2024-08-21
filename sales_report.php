@@ -10,6 +10,104 @@ if (isset($_POST['submit'])) {
   $result = $conn->query($sql);
 }
 ?>
+<html>
+
+<head>
+  <title>Sales Report</title>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  h5 {
+    color: #6a1b9a;
+    margin-bottom: 20px;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #6a1b9a;
+  }
+
+  input[type="datetime-local"] {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  input[type="submit"],
+  button {
+    background-color: #6a1b9a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  input[type="submit"]:hover,
+  button:hover {
+    background-color: #4a0072;
+  }
+
+  button {
+    margin-left: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  thead {
+    background-color: #6a1b9a;
+    color: #fff;
+  }
+
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+
+  .total {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #6a1b9a;
+  }
+</style>
+
+</html>
 <div class="container">
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <label for="starttime">Start (date and time):</label>
@@ -22,7 +120,7 @@ if (isset($_POST['submit'])) {
   <button type="button" onclick="window.print();return false;">Pdf Report</button>
   <div class="container pendingbody">
     <h5>Sales Report</h5>
-    <table class="table table-striped">
+    <table class="table">
       <thead>
         <tr>
 
@@ -57,6 +155,6 @@ if (isset($_POST['submit'])) {
         ?>
       </tbody>
     </table>
-    <?php echo "Total= Rs. " . $t; ?>
+    <?php echo "Total= Rs" . $t; ?>
 
   </div>
