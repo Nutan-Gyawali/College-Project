@@ -115,13 +115,13 @@ if (isset($_POST['submit'])) {
         .team-member img {
             width: 80px;
             /* Adjust as needed */
-            height: auto;
+            height: 90px;
             border-radius: 50%;
             margin-bottom: 10px;
         }
 
         .team-member p {
-            margin: 0;
+
             font-weight: bold;
         }
     </style>
@@ -168,7 +168,7 @@ if (isset($_POST['submit'])) {
                             <p>Nutan G</p>
                         </div>
                         <div class="team-member">
-                            <img src="https://via.placeholder.com/80" alt="Member 4">
+                            <img src="prapti.jpg" alt="Member 4">
                             <p>Prapti G</p>
                         </div>
                     </div>
