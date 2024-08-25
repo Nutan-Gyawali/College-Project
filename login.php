@@ -156,7 +156,7 @@ if (isset($_POST['submit'])) {
                     <div class="team-members">
 
                         <div class="team-member">
-                            <img src="https://via.placeholder.com/80" alt="Member 1">
+                            <img src="karisha.png" alt="Member 1">
                             <p>Karisha P</p>
                         </div>
                         <div class="team-member">
