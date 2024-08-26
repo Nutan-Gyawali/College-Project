@@ -2,6 +2,8 @@
 include "header.php";
 include "connection.php";
 
+$successMessage = "";
+
 if (isset($_POST['submit'])) {
   $name = $_POST['name'];
   $des = $_POST['des'];
@@ -9,18 +11,12 @@ if (isset($_POST['submit'])) {
   $unitprice = $_POST['unitprice'];
 
   $insertsql = "INSERT INTO product(name, des, unit, unitprice) VALUES ('$name', '$des', '$unit','$unitprice')";
-
   $insertsql1 = "INSERT INTO purchase(name, des, unit, unitprice) VALUES ('$name', '$des', '$unit','$unitprice')";
-  if ($conn->query($insertsql1) === TRUE) {
-    echo "";
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
 
-  if ($conn->query($insertsql) === TRUE) {
-    echo "   New record created successfully";
+  if ($conn->query($insertsql1) === TRUE && $conn->query($insertsql) === TRUE) {
+    $successMessage = "New record created successfully";
   } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $conn->error;
   }
 }
 ?>
@@ -48,6 +44,7 @@ if (isset($_POST['submit'])) {
       background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
     }
 
     h5 {
@@ -88,17 +85,32 @@ if (isset($_POST['submit'])) {
     .btn-primary:hover {
       background-color: #4a0072;
     }
+
+    .success-message {
+      position: absolute;
+      top: 50px;
+      right: -200px;
+      background-color: lightblue;
+      color: #28a745;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 200px;
+      text-align: center;
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
+    <?php if (!empty($successMessage)) : ?>
+      <div class="success-message"><?php echo $successMessage; ?></div>
+    <?php endif; ?>
     <h5>Purchase</h5>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
       <div class="mb-3">
         <label for="exampleInputName" class="form-label">Product Name</label>
         <input type="text" name="name" class="form-control" id="exampleInputName">
-
       </div>
       <div class="mb-3">
         <label for="exampleInputDes" class="form-label">Description</label>
@@ -112,9 +124,4 @@ if (isset($_POST['submit'])) {
         <label for="exampleInputUnitprice" class="form-label">Unit Price</label>
         <input type="number" name="unitprice" class="form-control" id="exampleInputUnitprice">
       </div>
-      <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-    </form>
-  </div>
-</body>
-
-</html>
+      <butto
