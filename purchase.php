@@ -88,9 +88,9 @@ if (isset($_POST['submit'])) {
 
     .success-message {
       position: absolute;
-      top: 50px;
-      right: -200px;
-      background-color: lightblue;
+      top: 20px;
+      right: -250px;
+      background-color: #e0ffe0;
       color: #28a745;
       padding: 10px 15px;
       border-radius: 8px;
@@ -124,4 +124,9 @@ if (isset($_POST['submit'])) {
         <label for="exampleInputUnitprice" class="form-label">Unit Price</label>
         <input type="number" name="unitprice" class="form-control" id="exampleInputUnitprice">
       </div>
-      <butto
+      <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+    </form>
+  </div>
+</body>
+
+</html>
