@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
         .card {
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
+            max-width: 700px;
         }
 
         .card-header {
@@ -148,29 +148,18 @@ if (isset($_POST['submit'])) {
                         </div>
                     </form>
                 </div>
-                <!-- Team Members Section -->
                 <div class="team-section">
                     <b>
-                        <p>Team Members </p>
+                        <p>Made By </p>
                     </b>
                     <div class="team-members">
 
-                        <div class="team-member">
-                            <img src="karisha.png" alt="Member 1">
-                            <p>Karisha P</p>
-                        </div>
-                        <div class="team-member">
-                            <img src="nisha.jpg" alt="Member 2">
-                            <p>Nisha K</p>
-                        </div>
+
                         <div class="team-member">
                             <img src="nutan.jpg" alt="Member 3">
                             <p>Nutan G</p>
                         </div>
-                        <div class="team-member">
-                            <img src="prapti.jpg" alt="Member 4">
-                            <p>Prapti G</p>
-                        </div>
+
                     </div>
                 </div>
             </div>
